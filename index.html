@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>.:: Chinmay B - Assignment 6 ::.</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="navbar">
+          <a href="./index.html">Intro</a>
+          <a href="./index.html">Timeline</a>
+          <a href="./index.html">Projects</a>
+          <a href="./index.html">Technology Goals</a>
+          <a href="./index.html">Interests + Hobbies</a>
+          <a href="./index.html">Certifications</a>
+          <a href="./index.html" class="active">Photography</a>
+          <a class="xright" href="./index.html">About</a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="main-content">
+      <h1>Assignment 6</h1>
+      <hr />
+      <div class="app-container" id="app">
+        <div class="selection-container">
+          <h2>Information</h2>
+
+          <input type="checkbox" id="inc-descr" v-model="includeDescription" />
+          <label for="inc-descr">Description</label><br />
+
+          <input type="checkbox" id="inc-year" v-model="includeYear" />
+          <label for="inc-year">Year</label><br />
+
+          <input type="checkbox" id="inc-place" v-model="includePlace" />
+          <label for="inc-place">Place</label>
+
+          <div>
+            <a href="#" v-on:click="setAll(true)">all</a>&nbsp;&nbsp;&nbsp;<a
+              href="#"
+              v-on:click="setAll(false)"
+              >None</a
+            >
+          </div>
+
+          <div>
+            Please select the information to be displayed for selected images
+          </div>
+        </div>
+
+        <div class="image-container">
+          <div class="image-list">
+            <img
+              v-for="(image, index) in allImages"
+              v-bind:src="image.image"
+              v-bind:alt="image.title"
+              v-bind:key="image.title"
+              @mouseover="swapImage(index)"
+              @mouseleave="resetImage(index)"
+              width="225"
+              height="175"
+            />
+          </div>
+
+          <div class="detail-box" v-if="hover">
+            <h2>Image Details</h2>
+            <span v-if="includeDescription"
+              ><b>Description</b>: {{descr}}<br
+            /></span>
+            <span v-if="includeYear"><b>Year</b>: {{year}}<br /></span>
+            <span v-if="includePlace"><b>Where</b>: {{place}}<br /></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>&copy; 2021, Chinmay B</footer>
+    <script src="./index.js"></script>
+  </body>
+</html>

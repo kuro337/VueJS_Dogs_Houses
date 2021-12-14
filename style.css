@@ -1,0 +1,169 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 30px;
+  margin-top: 50px; /* Add a top margin to avoid content overlay */
+}
+
+footer {
+  position: fixed; /* Set the navbar to fixed position */
+  bottom: 0; /* Position the navbar at the bottom of the page */
+  width: 100%; /* Full width */
+
+  margin: 0;
+  padding: 5px 10px 5px 10px;
+  background-color: #ddd;
+  color: #888;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.7rem;
+  font-style: italic;
+}
+
+/* ------------------------------------------------------------ */
+
+/* The navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #000066;
+  font-family: Arial, Helvetica, sans-serif;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  background-color: #0000aa;
+  color: #aaf;
+}
+
+.navbar a.xright {
+  float: right;
+}
+
+.navbar .active {
+  background-color: #04aa6d;
+}
+
+/* ----------------------------------------------------- */
+
+.app-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 75vh;
+}
+
+.selection-container {
+  width: 35rem;
+  max-width: 300px;
+  margin: 0 15px 20px 10px;
+
+  color: #888;
+  background-color: #e8e8e8;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+
+  padding-left: 1rem;
+  float: left;
+
+  box-shadow: 4px 3px 8px 1px #888;
+  -webkit-box-shadow: 4px 3px 8px 1px #888;
+}
+
+.selection-container h2 {
+  font-family: Arial, sans-serif;
+  font-size: 2rem;
+  padding-top: 0px;
+  padding-left: 1rem;
+  text-align: left;
+  color: #888;
+}
+
+.selection-container label {
+  margin: 0 0 0.1rem 0.5rem;
+  font-size: 1.1rem;
+}
+
+.selection-container div {
+  margin-top: 0.5rem;
+  font-size: smaller;
+  font-style: italic;
+  text-align: left;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1rem;
+
+  gap: 2rem;
+  background-color: #e8e8e8;
+
+  border: 2px solid #ddd;
+  border-radius: 4px;
+
+  box-shadow: 4px 3px 8px 1px #888;
+  -webkit-box-shadow: 4px 3px 8px 1px #888;
+}
+
+.image-list img {
+  transition: transform 0.2s;
+}
+
+.image-list img:hover {
+  transform: scale(1.15); /* (150% zoom)*/
+}
+
+.detail-box {
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  border: 2px solid #888;
+  border-radius: 5px;
+  background-color: #eee;
+  min-height: 20px;
+  width: 50vw;
+
+  box-shadow: 4px 3px 8px 1px #888;
+  -webkit-box-shadow: 4px 3px 8px 1px #888;
+
+  color: #666;
+}
+
+.detail-box h2 {
+  font-size: 2rem;
+  color: #777;
+}
+
+@media screen and (max-width: 600px) {
+  .app-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .image-list {
+    justify-content: center;
+  }
+}
